@@ -56,6 +56,7 @@ jobs:
 
       - name: Get current AQI monitor results
         run: |
+          source("R/update_verification.R")
           source("R/email_background.R")
         shell: Rscript {0} 
 
