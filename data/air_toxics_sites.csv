@@ -1,0 +1,60 @@
+AQS_ID,AQS_ID_Dashes,MPCAID,City,Site_Name,Report_Name,RegionName,ReportRegion2,Address,Date.Site.Established,Date.Site.Closed,County,County.Code,FIPS,UTM_easting,UTM_north,lat,long
+270031002,27-003-1002,6010,Blaine,Ncore,Blaine-Anoka County Airport,Metro,Suburban,9939 Lima St,5/1/1979,,Anoka,3,27003,482550,4998591,45.1407,-93.222
+270036020,27-003-6020,6020,Anoka,Federal Cartridge,Anoka-Federal Cartridge,Metro,Suburban,900 Ehlen Dr,1/1/2010,,Anoka,3,27003,470867,5005022,45.19808,-93.37092
+270072303,27-007-2303,2303,Red Lake,Red Lake,Red Lake,Northern,Tribal,15700 Weasel Rd,1/1/2011,,Beltrami,7,27007,349545,5304614,47.87721,-95.01222
+270177416,27-017-7416,7416,Cloquet,Cloquet,Cloquet,Northern,Tribal,175 University Rd.,5/24/2001,,Carlton,17,27017,536439,5172275,46.70304,-92.52334
+270190052,27-019-0052,52,Chaska,Chaska Water Tower,Chaska,Metro,Suburban,Chaska Water Tower,11/10/2002,12/31/2007,Carver,19,27019,453234,4966312,44.84869,-93.59181
+270210001,27-021-0001,3401,Leech Lake,Leech Lake,Leech Lake,Northern,Tribal,,,,Cass,21,27021,412757,5223581,47.15994,-94.15099
+270370001,27-037-0001,460,Eagan,Gopher,Eagan-Gopher Resources,Metro,Industrial,3450 Dodd Rd,,,Dakota,37,27037,490900,4964200,44.83115,-93.11512
+270370020,27-037-0020,420,Rosemount,FHR 420,Rosemount-Flint Hills 420,Metro,Industrial,12821 Pine Bend Trail,1/1/1972,,Dakota,37,27037,497430,4956651,44.76324517,-93.03247442
+270370421,27-037-0421,421,Inver Grove Heights,N of Flint Hills,Inver Grove Heights - Flint Hills 421,Metro,Industrial,3134 117th E.,8/4/2003,8/10/2007,Dakota,37,27037,496758,4957989,44.77529,-93.04097
+270370423,27-037-0423,423,Rosemount,FHR 423,Rosemount-Flint Hills 423,Metro,Industrial,2142 120th St. E,9/1/1990,,Dakota,37,27037,495040,4957740,44.77303608,-93.06268496
+270370441,27-037-0441,441,Rosemount,FHR 441,Rosemount-Flint Hills 441,Metro,Industrial,12555 Clayton Ave.,5/25/1999,12/18/2007,Dakota,37,27037,497870,4954781,44.74641,-93.02691
+270370442,27-037-0442,442,Rosemount,FHR 442,Rosemount-Flint Hills 442,Metro,Industrial,County Rd. 42,5/30/2000,,Dakota,37,27037,499560,4953905,44.73853,-93.00556
+270370443,27-037-0443,443,Rosemount,FHR 443,Rosemount-Flint Hills 443,Metro,Industrial,14035 Blaine Ave E.,1/1/2007,,Dakota,37,27037,495614,4954699,44.74566383,-93.05540453
+270370465,27-037-0465,465,Eagan,Gopher Resources,Eagan-Gopher Resources,Metro,Industrial,149 & Yankee Doodle Rd.,1/1/2006,,Dakota,37,27037,490809,4964553,44.83432634,-93.11627981
+270370470,27-037-0470,470,Apple Valley,Apple Valley,Apple Valley,Metro,Suburban,225 Garden View Dr.,10/3/2000,,Dakota,37,27037,481213,4953948,44.73867,-93.23729125
+270530050,27-053-0050,940,Minneapolis,NE Fire Station,Mpls-NE Fire Station,Metro,Urban,143 13th Ave NE,1/1/1978,1/1/2007,Hennepin,53,27053,478941,4983125,45.00126,-93.2672
+270530053,27-053-0053,945,Minneapolis,Mpls Library,Mpls-Old Downtown Library,Metro,Urban,300 Nicollet Mall,8/1/1978,12/31/2003,Hennepin,53,27053,478712,4980830,44.9806,-93.27
+270530909,27-053-0909,909,Minneapolis,Mpls-Lowry Ave,Mpls-Lowry Ave,Metro,Urban,3104 N Pacific St,1/1/2013,,Hennepin,53,27053,478196,4984332,45.01210199,-93.27669899
+270530910,27-053-0910,910,Minneapolis,Mpls-Pacific Street,Mpls-Pacific Street,Metro,Urban,2710 N Pacific St,,,Hennepin,53,27053,478168,4983909,45.008257,-93.277009
+270530961,27-053-0961,961,Richfield,Richfield Int. Sch.,Richfield,Metro,Suburban,7020 12th Ave. S.,4/12/1999,,Hennepin,53,27053,479557,4969163,44.87559219,-93.2588191
+270530962,27-053-0962,962,Minneapolis,Near-Road NOX,Mpls-Near-Road,Metro,Urban,1444 E 18th St,1/1/2013,,Hennepin,53,27053,479909,4979121,44.965242,-93.254759
+270530963,27-053-0963,963,Minneapolis,HC Anderson Sch.,Mpls-HC Anderson School,Metro,Urban,2727 - 10th Ave. So.,1/1/2001,,Hennepin,53,27053,479628,4977817,44.95349728,-93.25826891
+270530964,27-053-0964,964,Minneapolis-St Paul International Airport,MSP Airport,MSP International Airport,Metro,Urban,MSP Airport,2/1/2002,,Hennepin,53,27053,484571,4970374,44.88662,-93.19538
+270530965,27-053-0965,965,Minneapolis,Putnam School,Mpls-Putnam School,Metro,Urban,1616 Buchanan St.,6/6/2002,1/1/2007,Hennepin,53,27053,481071,4983453,45.00427,-93.24019
+270530966,27-053-0966,966,Minneapolis,City of Lakes,Mpls-City of Lakes Bldg,Metro,Urban,309 2nd Ave S.,10/7/2002,,Hennepin,53,27053,479016,4980690,44.97934188,-93.26614711
+270530967,27-053-0967,967,Minneapolis,Shaw Lumber,Mpls-Shaw Lumber,Metro,Urban,645 Johnson St.,4/23/2004,4/17/2006,Hennepin,53,27053,481486,4982362,44.99446,-93.23488
+270530968,27-053-0968,968,Minneapolis,MSP Airport,MSP Airport 968,Metro,Urban,6040 28th Ave. S,6/1/2004,1/1/2007,Hennepin,53,27053,481589,4971114,44.89321,-93.23316
+270530969,27-053-0969,969,Minneapolis,Wenonah School,Mpls-Wenonah School,Metro,Urban,5625 28th Ave. S.,4/8/2005,,Hennepin,53,27053,481187,4971938,44.90062,-93.23829
+270531007,27-053-1007,907,Minneapolis,Humboldt Ave.,Mpls-N Humboldt Ave,Metro,Urban,4646 N Humboldt,1/1/1966,,Hennepin,53,27053,476472,4987409,45.03974516,-93.29872733
+270531901,27-053-1901,1901,Minneapolis,Little Earth,Mpls-Little Earth,Metro,Urban,2438 18th Ave S,,,Hennepin,53,27053,480368,4978325,44.95809,-93.24891
+270531904,27-053-1904,1904,Minneapolis,Mpls-Greenway,Mpls-Greenway,Metro,Urban,1930 Midtown Greenway,,,Hennepin,53,27053,,,44.95208,-93.24428
+270531905,27-053-1905,1905,Minneapolis,Mpls-Harrison,Mpls-Harrison,Metro,Urban,1600 Glenwood Ave,,,Hennepin,53,27053,,,44.98139,-93.3007
+270531906,27-053-1906,1906,Minneapolis,Mpls-Lyndale,Mpls-Lyndale,Metro,Urban,3101 Nicollet Ave,,,Hennepin,53,27053,,,44.94634,-93.27735
+270532006,27-053-2006,250,St. Louis Park,St. Louis Park,St. Louis Park,Metro,Suburban,5005 Minnetonka Blvd,1/1/1972,,Hennepin,53,27053,472952,4977238,44.94806245,-93.34287248
+270535501,27-053-5501,970,Minneapolis,Mpls-School Air Toxics,Mpls-International School,Metro,Urban,277 12th Avenue North,,,Hennepin,53,27053,,,44.9905,-93.2825
+270750005,27-075-0005,7001,Ely,Fernberg Rd.,Ely,Northern,Northern,Fernberg Road,1/1/1977,,Lake,75,27075,612337,5311462,47.94661,-91.495590000000007
+270953051,27-095-3051,3051,Mille Lacs,Mille Lacs,Mille Lacs,Central,Tribal,HCR 67 BOX 194,6/17/1997,,Mille Lacs,95,27095,441415,5117127,46.2052,-93.75941
+271230017,27-123-0017,816,St. Paul,Holman Field,St. Paul-Holman Field,Metro,Urban,HOLMAN FIELD,1/1/1966,1/1/2007,Ramsey,123,27123,494862,4976512,44.94202,-93.06512
+271230021,27-123-0021,820,St. Paul,Ross Ave.,St. Paul-Ross Ave,Metro,Urban,1038 Ross Ave,1/1/1966,12/31/2007,Ramsey,123,27123,495549,4979214,44.96635,-93.05644
+271230818,27-123-0818,818,St. Paul,St. Paul -Downtown Airport,St. Paul -Downtown Airport,Metro,Urban,719 Eaton St,,,Ramsey,123,,,,44.9268,-93.0593
+271230866,27-123-0866,866,St. Paul,Red Rock Road,St. Paul-Red Rock Road,Metro,Urban,1450 Red Rock Rd,12/19/1995,,Ramsey,123,27123,498647,4971773,44.89938,-93.01714
+271230868,27-123-0868,868,St. Paul,Ramsey Health Center,St. Paul-Ramsey Cnty Public Health,Metro,Urban,555 Cedar St,2/17/1998,,Ramsey,123,27123,492232,4977473,44.95065017,-93.09847505
+271230871,27-123-0871,871,St. Paul,Harding High School,St. Paul-Harding High School,Metro,Urban,1540 East 6th St.,10/2/1998,,Ramsey,123,27123,497169,4978434,44.95933791,-93.03589404
+271230874,27-123-0874,874,St. Paul,Gopher Ethanol,St. Paul-Gopher Ethanol,Metro,Urban,340 Colborne St.,6/1/2004,,Washington,163,27163,490584,4975233,44.9311,-93.1183
+271231003,27-123-1003,801,St. Paul,Vandalia St.,St. Paul-Vandalia St.,Metro,Urban,2179 University Ave,1/1/1965,,Ramsey,123,27123,484997,4978667,44.96128,-93.19023
+271231902,27-123-1902,1902,St. Paul,St. Paul: Thomas-Dale,St. Paul: Thomas-Dale,Metro,Urban,33 North Dale St,,,Ramsey,123,27123,489986.9,4978211,44.95726,-93.12695
+271231903,27-123-1903,1903,St. Paul,St. Paul- West Side,St. Paul- West Side,Metro,Urban,401 Concord Street,,,Ramsey,123,27123,494671,4974879,44.92732,-93.06753
+271231907,27-123-1907,1907,St. Paul,St. Paul - East Side,St. Paul - East Side,Metro,Urban,409 Case Ave E,,,Ramsey,123,27123,,,44.97154,-93.08298
+271231908,27-123-1908,1908,St. Paul,St. Paul - South St. Anthony Park,St. Paul - South St. Anthony Park,Metro,Urban,2265 Robbins Street,,,Ramsey,123,,,,44.973096,-93.199879
+271377001,27-137-7001,1300,Virginia,Virginia,Virginia,Northern,Northern,327 First St. S,1/1/1968,,St. Louis,137,27137,534908,5263193,47.52123,-92.53631
+271377549,27-137-7549,7549,Duluth,Michigan St.,Duluth-Michigan St.,Northern,Northern,1532 W Michigan St,1/2/1994,,St. Louis,137,27137,567232,5179911,46.76936,-92.11945
+271377554,27-137-7554,7554,Duluth,Duluth-Laura MacArthur School,Duluth - Laura MacArthurs,Northern,Northern,720 North Central Ave,,,St. Lous,137,27137,563700,5177016,46.74366,-92.1661
+271377555,27-137-7555,7555,Duluth,Waseca Road,Duluth-Waseca Rd.,Northern,Northern,Industrial Road,7/30/2001,,St. Louis,137,27137,563924,5175563,46.73056,-92.16337
+271453053,27-145-3053,3053,St. Cloud,Grede Foundries,St. Cloud-Grede Foundaries,Central,Industrial,5200 Foundry Circle,1/1/2010,,Stearns,145,27145,404299,5046409,45.56464,-94.22635
+271630009,27-163-0009,435,St. Paul Park,MPC 435,St. Paul Park Refinery 435,Metro,Industrial,7th Ave & 5th St.,1/1/1982,,Washington,163,27163,500341,4965871,44.84625,-92.99568
+271630436,27-163-0436,436,St. Paul Park,MPC 436,St. Paul Park Refinery 436,Metro,Industrial,649 5th St,2/27/1989,,Washington,163,27163,500348,4965992,44.84734,-92.9956
+271630438,27-163-0438,438,Newport,MPC 438,Newport-St. Paul Park Refinery 438,Metro,Industrial,4th Ave & 2nd St.,6/14/1995,,Washington,163,27163,499725,4967385,44.85988,-93.00348
+271630445,27-163-0445,445,Bayport,Anderson School,Bayport-Anderson School,Metro,Suburban,309 N. Fourth St.,1/1/2007,7/1/2008,Washington,163,27163,517312,4985065,45.01882,-92.78028
+271630446,27-163-0446,446,Bayport,Point Rd.,Bayport-Point Rd,Metro,Industrial,22 Point Rd.,5/17/2007,,Washington,163,27163,517823,4986085,45.02799,-92.77375
