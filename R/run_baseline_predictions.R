@@ -25,8 +25,7 @@ three_days_ago <- today - 3
 
 
 # Load recent results
-results <- read_csv("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/Staff Folders/Dorian/AQI/Verification/event_table.csv")
-
+results <- readRDS("verification/event_table.Rdata")
 
 # Persistance = Previous day result
 persist <- filter(results, forecast_date == three_days_ago) %>%
