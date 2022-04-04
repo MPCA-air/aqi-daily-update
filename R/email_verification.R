@@ -9,8 +9,19 @@ md_file <- readLines("R/daily_results.Rmd")
 writeLines(md_file, "issue.Rmd")
 rmarkdown::render(input = "issue.Rmd")
 
+msg_text <- readLines("issue.md") %>% paste(collapse = "\n")
 
-# Update Github table
+# Add header text
+issue <- paste0('---\ntitle: Daily AQI report \n',
+                'labels: daily_email',
+                '\n---\n\n', 
+                msg_text)
+
+# Save issue to markdown file
+cat(issue, file = "issue.md") 
+
+
+# Update Github model performance table for AQI Watch website
 
 # Filter verification to last 7 days
 verify <- all_verify %>% filter(forecast_date > (Sys.Date() - 8), forecast_date < Sys.Date())
@@ -27,6 +38,6 @@ verify <- verify %>%
 verify <- verify %>% mutate_at(vars(matches("mod_")), round, 3)
 
 # Save
-saveRDS(verify, "data/model_performance.Rdata")
+write_csv(verify, "data/model_performance.csv")
 
 ##

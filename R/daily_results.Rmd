@@ -5,10 +5,6 @@ output:
     html_preview: false
 ---
 
-
-# Daily AQI report    
-
-
 > *`r paste("For", format(Sys.Date() - 1, "%A %b %d, %Y"))`*
 
 ```{r setup, include=FALSE}
