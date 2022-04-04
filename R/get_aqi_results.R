@@ -1,16 +1,21 @@
 #! /usr/bin/env Rscript
 
 library(stringr)
-library(RCurl)
-library(tidyverse)
+library(readr)
+library(dplyr)
+library(tidyr)
 
+aircast_path  <- "https://raw.githubusercontent.com/MPCA-air/aqi-daily-update/main/"
+aqiwatch_path <- "https://raw.githubusercontent.com/MPCA-air/aqi-watch/main/"
+results_path  <- ""
 
 # Load get_airnow() function
 source(paste0(aircast_path, "R/get_airnow.R"))
 
-       
-# Get yesterday's actuals  #
-#--------------------------#
+# Get monitoring sites ----
+aqi_sites <- read_csv(paste0(aircast_path, "data/monitors_and_wx_stations.csv"))
+
+names(aqi_sites) <- gsub(" ", "_", tolower(names(aqi_sites)))
 
 # Drop outstate sites
 sites <- filter(aqi_sites, !fcst_region %in% c("CA", "ND", "SD", "WI", "IA"))
@@ -21,6 +26,11 @@ sites$aqsid <- gsub("-", "", sites$site_catid)
 # Filter to one site per forecast city
 sites <- filter(sites, !site_catid %in% c('27-017-7416'))
 
+# Site list
+site_list <- c(sites$aqsid, gsub("-", "", sites$alt_siteid))
+
+# Pollutant list
+pollutant_list <- c("OZONE-8HR", "PM2.5-24hr")
 
 # Get dates
 today     <- gsub("-", "", Sys.Date())
@@ -29,11 +39,6 @@ yesterday <- Sys.Date() - 1
 
 year      <- format(Sys.Date() - 1, "%Y")
 
-# Site list
-site_list <- c(sites$aqsid, gsub("-", "", sites$alt_siteid))
-
-# Pollutant list
-pollutant_list <- c("OZONE-8HR", "PM2.5-24hr")
 
 # Download results from AirNow
 aqi <- get_airnow(yesterday, site_list[!is.na(site_list)], pollutant_list) %>% 
@@ -68,6 +73,7 @@ names(aqi)[c(4:5)] <-  c("max_ozone_8hr", "pm25_24hr")
   
 
 # QC MPCA sites using AirVision data
+if (FALSE) {
 ## Connect to aqi-watch FTP site
 airvis_link <- paste0("ftp://", creds$airvis_ftp_usr_pwd, "@34.216.61.109/airvision/")
 
@@ -98,17 +104,19 @@ if (class(airvis_df) == "try-error") {
                      silent = T)
 }
 
+
+
 # Create empty table if fail
-if (class(airvis_df) == "try-error") {
+if (!exists("airvis_df") || class(airvis_df) == "try-error") {
   
-  airvis_df <- tibble(aqsid     = NA, x2 = NA, x3 = NA,
-                          date      = as.character(NA), 
+  airvis_df <- tibble(aqsid = NA, x2 = NA, x3 = NA,
+                          date = as.character(NA), 
                           Parameter = NA, x6 = NA, x7 = NA,
                           Concentration = NA, x9 = NA, 
                           qc_flag   = NA)
 }
 
-airvis_df   <- airvis_df[ , c(1,4,5,8,10)]
+airvis_df <- airvis_df[ , c(1,4,5,8,10)]
   
 names(airvis_df) <- c("aqsid", "date", "Parameter", "Concentration", "qc_flag")
 
@@ -172,6 +180,7 @@ airvis_pm    <- group_by(airvis_pm, aqsid) %>%
                           n_pm25_uniq   = length(unique(Concentration)))
 
 
+}
 
 # Check Voyageur's site ID
 aqi[aqi$aqsid == "271370034", "aqsid"] <- "271379000"
@@ -180,9 +189,11 @@ aqi[aqi$aqsid == "271370034", "aqsid"] <- "271379000"
 # Join AirNow with AirVis
 aqi$City <- NULL
 
-air_all <- full_join(aqi, airvis_ozone)
-
-air_all <- full_join(air_all, airvis_pm)
+air_all <- aqi %>%
+           mutate(max_ozone_8hr_vis = NA,
+                  pm25_24hr_vis = NA)
+#air_all <- full_join(aqi, airvis_ozone)
+#air_all <- full_join(air_all, airvis_pm)
 
 
 # Join Sites and AQS-IDs
@@ -221,11 +232,11 @@ air_all <- mutate(air_all,
 } 
 
 # Drop extra columns
-air_all <- dplyr::select(air_all, -c(max_ozone_8hr, pm25_24hr, max_ozone_8hr_vis, pm25_24hr_vis, n_pm25_uniq, n_ozone_uniq))
+air_all <- dplyr::select(air_all, -c(max_ozone_8hr, pm25_24hr, max_ozone_8hr_vis, pm25_24hr_vis))#, n_pm25_uniq, n_ozone_uniq))
 
 
 # Set date
-air_all$date <-  Sys.Date() - 1
+air_all$date <- Sys.Date() - 1
 
 # Check missing sites
 miss_sites <- filter(sites, 
@@ -233,32 +244,34 @@ miss_sites <- filter(sites,
                      !gsub("-", "", alt_siteid) %in% air_all$aqsid)
 
 
-# Names
-names(air_all)[c(3:4,7:8)] <- c("count_ozone_obs","count_pm25_obs","obs_max_ozone_8hr_ppb", "obs_pm25_24hr_ugm3") 
+# Set names
+air_all <- air_all %>%
+           rename(#count_ozone_obs = ,
+                  #count_pm25_obs = ,
+                  obs_max_ozone_8hr_ppb = a_max_ozone_8hr_ppb, 
+                  obs_pm25_24hr_ugm3 = a_pm25_24hr_ugm3) 
 
 
 # Save
-setwd("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/Staff Folders/Dorian/AQI/Current forecast")
-
 keep_columns <- c("date", 
                   "site_catid", 
                   "air_monitor", 
                   "aqsid", 
-                  "count_ozone_obs",
-                  "count_pm25_obs",
+                  #"count_ozone_obs",
+                  #"count_pm25_obs",
                   "obs_max_ozone_8hr_ppb", 
                   "obs_pm25_24hr_ugm3")
 
-file_name <- paste0(Sys.Date() - 1, "_AQI_observed.csv")
+air_all <- air_all[ , keep_columns]
+
 
 # Write file only if it isn't already there
-if(!file_name %in% list.files()) {
+if (FALSE) {
   
-  write.csv(air_all[ , keep_columns], file_name, row.names = F)
-
+  file_name <- paste0(Sys.Date() - 1, "_AQI_observed.csv")
+  
+  if (!file_name %in% list.files()) {
+    write.csv(air_all, file_name, row.names = F)
   }
-
-
-
-
+}
 #

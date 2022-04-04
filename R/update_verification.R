@@ -1,20 +1,6 @@
 #! /usr/bin/env Rscript
 
-library(tidyverse)
-
-
-aircast_path  <- "https://raw.githubusercontent.com/dKvale/aircast/master/"
-aqiwatch_path <- "https://raw.githubusercontent.com/dKvale/aqi-watch/master/"
-results_path  <- "X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/Staff Folders/Dorian/AQI/"
-
-
-# Load site locations
-aqi_sites <- read_csv(paste0(aircast_path, "data/monitors_and_wx_stations.csv"))
-
-names(aqi_sites) <- gsub(" ", "_", tolower(names(aqi_sites)))
-
-
-#"C:\Users\dkvale\Documents\R\R-4.0.2\bin\i386\Rscript.exe" --no-save --no-restore "X:\Agency_Files\Outcomes\Risk_Eval_Air_Mod\_Air_Risk_Evaluation\Staff folders\Dorian\AQI\aircast\R\update_verification.R"
+## "C:\Users\dkvale\Documents\R\R-4.0.2\bin\i386\Rscript.exe" --no-save --no-restore "R\update_verification.R"
 
 days_past <- 1
 
@@ -24,9 +10,7 @@ today <- Sys.Date()
 source(paste0(aqiwatch_path, "R/aqi_convert.R"))
 
 
-#--------------------------#
-# Sites
-#--------------------------#
+# Sites ----
 print("Loading sites...")
 
 sites <- aqi_sites
@@ -35,9 +19,7 @@ sites <- aqi_sites
 sites <- dplyr::filter(sites, !fcst_region %in% c("CA", "ND", "SD", "WI", "IA"))
 
 
-# Yesterday's official submitted forecast
-#--------------------------------#
-
+# Yesterday's official submitted forecast ----
 print("Loading official forecasts...")
 
 # Load forecasts from AirNow for all days past yesterday
@@ -127,19 +109,21 @@ for (i in 0:4) {
 # Remove duplicates
 aqi_forc <- unique(aqi_forc_all)
 
-
-# Load internal forecasts for missing sites
-aqi_forc_int <- tryCatch(read_csv("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/Air_Modeling/AQI_Forecasting/Tree_Data/Forecast/AQI_Solutions/Values/All_Values_gen2.csv"),
-                         error = function(e) NA)
-
-if (is.na(aqi_forc_int)) { 
-  aqi_forc_int <- read_csv("~/../Desktop/aircast/forecast/Forecast_Values.csv")
-  }
-
-
 # Update Leech Lake name
 aqi_forc <- aqi_forc %>% 
             mutate(Group = gsub("Leech Lake Nation: Cass Lake",  "Leech Lake", Group))
+
+# Load internal forecasts for missing sites
+## Update when forecasts moved to Github
+if (FALSE) {
+aqi_forc_int <- tryCatch(read_csv("AQI_Solutions/Values/All_Values_gen2.csv"),
+                         error = function(e) NA)
+
+
+if (is.na(aqi_forc_int)) { 
+  aqi_forc_int <- read_csv("forecast/Forecast_Values.csv")
+}
+
 
 aqi_forc_int <- aqi_forc_int %>% 
                 mutate(Group = gsub("Leech Lake Nation: Cass Lake",  "Leech Lake", Group))
@@ -181,20 +165,7 @@ aqi_forc_updates <- left_join(aqi_forc_updates,
 
 
 aqi_forc <- bind_rows(aqi_forc_original, aqi_forc_updates)
-
-
-# Join missing sites
-if (FALSE) {
-
-  aqi_forc <- bind_rows(aqi_forc,
-                      dplyr::filter(sites, !fcst_region %in% aqi_forc$Group) %>%
-                        mutate(Group    = fcst_region,
-                               Date     = Sys.Date() - 1,
-                               DayIndex = 1,
-                               ID       = site_catid) %>%
-                               select(Group, Date, DayIndex, ID))
 }
-
 
 # Use submitted value if available
 aqi_forc  <- aqi_forc %>%
@@ -203,44 +174,10 @@ aqi_forc  <- aqi_forc %>%
                     `Max Avg8Hr` = aqi2conc(AQI_O3, "Ozone"),
                     AQI_PM       = ifelse(is.na(`PM2.5`), as.character(AQI_PM_Ens), `PM2.5`),
                     Pm25Avg      = aqi2conc(AQI_PM, "PM25")) %>%
-             select(-c(OZONE, `PM2.5`, Latitude, Longitude, Site))
+             select(-c(OZONE, `PM2.5`))
 
 
-
-# Yesterday's model output forecast
-#------------------------------------#
-if (FALSE) {
-
-print("Loading modeling forecasts...")
-
-mod_o3   <- read.csv("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/Air_Modeling/AQI_Forecasting/Tree_Data/Forecast/AQI_Solutions/Values/All_Values_O3.csv",
-                     stringsAsFactors = FALSE)
-mod_pm   <- read.csv("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/Air_Modeling/AQI_Forecasting/Tree_Data/Forecast/AQI_Solutions/Values/All_Values_PM.csv",
-                     stringsAsFactors = FALSE)
-
-mod_forc <- full_join(mod_o3, mod_pm)
-
-
-# Change names of model forecast values to distinguish
-# between official submitted forecast
-names(mod_forc)[c(2:3,10:11)] <- c("mod_max_avg8hr", "mod_aqi_o3", "mod_pm25avg", "mod_aqi_pm")
-
-#-- Check for "/" slash in date
-if (grepl("[/]", mod_forc$Date[1])) {
-  
-  mod_forc$Date <- as.Date(mod_forc$Date, "%m/%d/%Y")
-  
-} else {
-  
-  mod_forc$Date <- as.Date(mod_forc$Date, "%Y-%m-%d")
-  
-}
-
-# Join tables into new table - "verify"
-verify  <- left_join(aqi_forc, select(mod_forc, -Group))
-
-}
-
+# Yesterday's model output forecast ----
 verify <- aqi_forc
 
 names(verify) <- gsub("Max Avg8Hr ", "mod_max_avg8hr_", names(verify))
@@ -248,10 +185,9 @@ names(verify) <- gsub("AQI_O3_", "mod_aqi_o3_", names(verify))
 names(verify) <- gsub("Pm25Avg ", "mod_pm25avg_", names(verify))
 names(verify) <- gsub("AQI_PM_", "mod_aqi_pm_", names(verify))
 
-verify <- rename(verify,
-                 forecast_date = Date,
-                 forecast_day  = DayIndex, 
-                 site_catid    = ID)
+verify <- verify %>%
+          rename(forecast_date = Date,
+                 forecast_day  = DayIndex) 
 
 names(verify) <- gsub("AQI_O3", "fcst_ozone_aqi", names(verify))
 names(verify) <- gsub("Max Avg8Hr", "fcst_ozone_ppb", names(verify))
@@ -262,22 +198,21 @@ names(verify) <- tolower(names(verify))
 
 
 # Rearrange columns with dates first
-verify <-  select(verify, forecast_date, everything())
+verify <-  verify %>% select(forecast_date, everything())
 
 
-
-# Yesterday's model inputs
-#--------------------------------#
-setwd("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/Air_Modeling/AQI_Forecasting/Tree_Data/Forecast/Forecast_Met")
-
+# Yesterday's model inputs ----
+## Update when forecasts moved to Github
+if (FALSE) {
+  
 print("Model inputs...")
 
 all_inputs <- read_csv("Met_View.csv")
 
 names(all_inputs)[1:3] <- c("forecast_day", "short_name", "site_catid")
 
-#-- Update date format for consistency
 
+#-- Update date format for consistency
 #-- Check for "/" slash in date
 if (grepl("[/]", all_inputs$Date[1])) {
    all_inputs$Date <- as.Date(all_inputs$Date, "%m/%d/%Y")
@@ -291,18 +226,15 @@ names(all_inputs)[grep("Date", names(all_inputs))] <- "forecast_date"
 class(all_inputs$forecast_day)
 class(verify$forecast_day)
 
-
 #-- Join all
 verify$site_catid
 
 all_inputs$site_catid
 
-verify   <- left_join(verify, select(all_inputs, -short_name))
+verify <- left_join(verify, select(all_inputs, -short_name))
 
 
-# Yesterday's HYSPLIT origins
-#--------------------------------#
-setwd("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/Staff Folders/Dorian/AQI/Current forecast")
+# Yesterday's HYSPLIT origins ----
 print("Loading HYSPLIT...")
 
 load_hys  <- FALSE
@@ -329,7 +261,7 @@ while (!load_hys) {
 if (!is.na(hys)) {
 
 # Drop run_date and row_id
-hys <- select(hys, -row_id, -run_date)  
+hys <- hys %>% select(-row_id, -run_date)  
   
 # Convert day index column
 hys$forecast_day <- as.numeric(gsub("day", "", hys$forecast_day))
@@ -347,8 +279,8 @@ hys <- select(hys, -c(traj_rain_sum,
 
 
 # Split 10m and 500m trajectory into 2 columns
-hys_10m    <- dplyr::filter(hys, receptor_height == 10)
-hys_500m   <- dplyr::filter(hys, receptor_height == 500)
+hys_10m  <- dplyr::filter(hys, receptor_height == 10)
+hys_500m <- dplyr::filter(hys, receptor_height == 500)
 
 # Wide format by forecast day
 #hys_10m            <- spread(hys_10m[ , -c(2:13)], forecast_day, lat_long)
@@ -376,65 +308,49 @@ names(hys_origin)[1:2] <- c("site_catid", "forecast_date")
 verify <- left_join(verify, hys_origin)
 
 }
+}
 
-
-# Clean table
-#--------------------------------#
+# Clean table -----
 names(verify) <- gsub(" ", "_", tolower(names(verify)))
 
-verify <- dplyr::filter(verify, !is.na(forecast_day), !is.na(site_catid))
+verify <- dplyr::filter(verify, !is.na(forecast_day), !is.na(group)) # !is.na(site_catid))
 
 
-# Load and join to previous days
-setwd("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/Staff Folders/Dorian/AQI/Verification")
-
+# Load and join to previous days ----
 print("Loading previous day verifications...")
 
-all_verify <- try(readRDS(paste0("Archive/", Sys.Date() - days_past, "_verification_table.Rdata")),
+all_verify <- try(readRDS(paste0("verification/", Sys.Date()-1, "_verification_table.Rdata")),
                   silent = TRUE)
 
 if ("try-error" %in% class(all_verify)) {
 
-  all_verify <- read_csv("verification_table2.csv")
-
+  all_verify <- try(read_csv("verification/verification_table.csv"),
+                    silent = TRUE)
 }
 
-all_verify <-  all_verify %>%
-               group_by(forecast_date, forecast_day, site_catid) %>%
-               slice(1) %>%
-               ungroup()
+if ("try-error" %in% class(all_verify)) { 
+  all_verify <- verify 
+  }
+
+
+all_verify <- all_verify %>%
+              group_by(forecast_date, forecast_day, site_catid) %>%
+              slice_head(n = 1) %>%
+              ungroup()
 
 
 #-- Set background types for joining
-if (!is.na(hys)) {
-  verify$background_10m_500m_avg_24hr_ozone_noon_ppb <- as.numeric(verify$background_10m_500m_avg_24hr_ozone_noon_ppb)
-  verify$background_origin_10m  <- as.character(verify$background_origin_10m)
-  verify$background_origin_500m <- as.character(verify$background_origin_500m)
-  verify$background_24hr_pm25_17z <- as.numeric(verify$background_24hr_pm25_17z)
-  verify$background_10m_500m_avg_24hr_ozone_noon_ppb <- as.numeric(verify$background_10m_500m_avg_24hr_ozone_noon_ppb)
-
-  }
 
 # Make forecast character string for color only forecasts
 all_verify$fcst_ozone_aqi <- as.character(all_verify$fcst_ozone_aqi)
 all_verify$fcst_pm25_aqi  <- as.character(all_verify$fcst_pm25_aqi)
 
-all_verify$cmaq_prod_pm     <- as.numeric(all_verify$cmaq_prod_pm)
-all_verify$cmaq_prod_pm_aqi <- as.numeric(all_verify$cmaq_prod_pm_aqi)
-all_verify$cmaq_prod_o3 <- as.numeric(all_verify$cmaq_prod_o3)
-all_verify$cmaq_prod_o3_aqi <- as.numeric(all_verify$cmaq_prod_o3_aqi)
-
-
 # All logical columns to numeric
 all_verify <- try(mutate_if(all_verify, is.logical, as.numeric))
 verify     <- try(mutate_if(verify, is.logical, as.numeric))
 
-
 verify$fcst_ozone_aqi <- as.character(verify$fcst_ozone_aqi)
 verify$fcst_pm25_aqi  <- as.character(verify$fcst_pm25_aqi)
-
-
-
 
 # Join all
 all_verify <- bind_rows(verify, all_verify)
@@ -460,15 +376,15 @@ first_value <- function(values) {
 
 
 # Get only current and future dates
-collapse <- filter(all_verify, 
-                   forecast_date %in% seq(today-days_past, today+5, 1))
+collapse <- all_verify %>% 
+            filter(forecast_date %in% seq(today-days_past, today+5, 1))
 
 
 # Collapse down to single forecast row
 collapse <- collapse %>%
-            group_by(forecast_date, forecast_day, site_catid) %>%
+            group_by(forecast_date, forecast_day, group) %>% #site_catid) %>%
             mutate_all(first_value) %>%
-            slice(1)
+            slice_head(n = 1)
 
 
 # Add back to full table
@@ -478,17 +394,19 @@ all_verify <- filter(all_verify,
 all_verify <- bind_rows(all_verify, collapse)
 
 
-# Yesterday's actuals
-#--------------------------#
-setwd("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/Staff Folders/Dorian/AQI/Current forecast")
+# Yesterday's actuals -----
 print("Loading actuals...")
 
-actuals <- read_csv(paste0(Sys.Date() - 1, "_AQI_observed", ".csv"))
+actuals <- air_all #readRDS(paste0("data/obs/", Sys.Date() - 1, "_AQI_observed", ".Rdata"))
 
 
 #-- Header names
-names(actuals)[c(1, 5:8)] <- c("forecast_date","count_ozone_obs",
-                               "count_pm25_obs","obs_ozone_ppb","obs_pm25_ugm3")
+actuals <- actuals %>%
+           rename(forecast_date = date,
+                  #count_ozone_obs =,
+                  #count_pm25_obs = ,
+                  obs_ozone_ppb = obs_max_ozone_8hr_ppb,
+                  obs_pm25_ugm3 = obs_pm25_24hr_ugm3)
 
 
 #-- Add AQI category
@@ -505,30 +423,51 @@ actuals[actuals$aqsid == "271370034", "site_catid"] <- "27-137-9000"
 # Collapse Duluth sites to one row
 if ("27-137-7554" %in% actuals$site_catid & "27-137-7550" %in% actuals$site_catid) {
   
-  duluth_pm <- as.numeric(actuals[actuals$site_catid == "27-137-7554", c("count_pm25_obs", "obs_pm25_ugm3", "obs_pm25_aqi")]) %>% unlist()
+  duluth_pm <- as.numeric(actuals[actuals$site_catid == "27-137-7554", 
+                                  c(#"count_pm25_obs",
+                                    "obs_pm25_ugm3", "obs_pm25_aqi")]) %>% 
+               unlist()
   
-  actuals[actuals$site_catid == "27-137-7550", c("count_pm25_obs", "obs_pm25_ugm3", "obs_pm25_aqi")] <- as.list(duluth_pm)
+  actuals[actuals$site_catid == "27-137-7550", 
+          c(#"count_pm25_obs", 
+            "obs_pm25_ugm3", "obs_pm25_aqi")] <- as.list(duluth_pm)
 
 }
+
 
 # Drop non-forcasted sites
 actuals <- dplyr::filter(actuals, !air_monitor %in% c("Voyageurs", "Laura McArthur Sch"))
 
 actuals <- dplyr::filter(actuals, !is.na(site_catid))
 
+# Add group
+actuals <- actuals %>%
+           left_join(sites %>% 
+                     rename(group = fcst_region) %>%
+                     select(site_catid, group))
 
 # Select yesterday forecasts and drop observation columns
-yesterday_fcst <- dplyr::filter(all_verify, forecast_date == Sys.Date() - 1) %>%
-                  select(-c(count_ozone_obs, count_pm25_obs, obs_ozone_ppb,
-                            obs_pm25_ugm3, obs_ozone_aqi, obs_pm25_aqi))
+yester_fcst <- dplyr::filter(all_verify, forecast_date == Sys.Date() - 1) %>%
+               select(-c(obs_ozone_ppb, obs_pm25_ugm3, 
+                         obs_ozone_aqi, obs_pm25_aqi,
+                         site_catid, short_name)) #count_ozone_obs, count_pm25_obs
+
+# Most recent forecast (except for current day) 
+yester_fcst <- yester_fcst %>% 
+               filter(forecast_day > 0) %>% 
+               group_by(group) %>%
+               arrange(forecast_day) %>%
+               slice_head(n = 1)
 
 # Attach actuals to yesterday forecasts
-yesterday_fcst <- left_join(yesterday_fcst, select(actuals, -air_monitor, -aqsid))
+yester_fcst <- left_join(actuals %>% select(-air_monitor, -aqsid), 
+                         yester_fcst)
 
 
-# Yesterday's CMAQ forecast
-#--------------------------------#
-setwd("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/Staff Folders/Dorian/AQI/Current forecast")
+# Yesterday's CMAQ forecast   -----
+## Add next week
+if (FALSE) {
+  
 print("CMAQ...")
 
 cmaq_all <- tibble()
@@ -571,37 +510,25 @@ for (i in 1:2) {
 # Attach CMAQ to yesterday forecasts
 if (nrow(cmaq_all) > 0) {
   
-  yesterday_fcst <- left_join(select(yesterday_fcst, -cmaq_ozone_ppb, -cmaq_ozone_aqi),
-                              cmaq_all)
+  yester_fcst <- left_join(yester_fcst %>% select(-cmaq_ozone_ppb, -cmaq_ozone_aqi),
+                           cmaq_all)
 }
 
+}
 
-# Join yesterday actuals & CMAQ to master table
-#------------------------------------------------#
+# Join yesterday actuals & CMAQ to full table -----
 
-# Drop yesterday from master table
+# Drop yesterday from full table
 all_verify <- dplyr::filter(all_verify, forecast_date != (Sys.Date() - 1))
 
-# Align column types
-all_verify$cmaq_ozone_aqi <- as.numeric(all_verify$cmaq_ozone_aqi)
-all_verify$cmaq_ozone_ppb <- as.numeric(all_verify$cmaq_ozone_ppb)
-
-yesterday_fcst <- mutate(yesterday_fcst,
-                         count_ozone_obs = as.numeric(count_ozone_obs),
-                         count_pm25_obs  = as.numeric(count_pm25_obs))
-
-# Join new yesterday results to master table
-all_verify <- rbind(yesterday_fcst, all_verify)
-
+# Join new yesterday results to full table
+all_verify <- bind_rows(yester_fcst, all_verify)
 
 # Limit table to past 365 days
 all_verify <- subset(all_verify, forecast_date > (today - 365))
 
-#------------------------------------------------#
-# Save master verification table
-#------------------------------------------------#
-setwd("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/Staff Folders/Dorian/AQI/Verification")
 
+# Save full verification table ----
 print("Saving file...")
 
 all_verify <- select(all_verify, -short_name) %>%
@@ -611,45 +538,15 @@ all_verify <- select(all_verify, -short_name) %>%
 all_verify <- subset(all_verify, 
                      as.numeric(format(forecast_date, "%Y")) > (as.numeric(format(Sys.Date(), "%Y")) - 1))
 
-saveRDS(all_verify, paste0("Archive/", Sys.Date(), "_verification_table.Rdata"))
+saveRDS(all_verify, paste0("verification/", Sys.Date(), "_verification_table.Rdata"))
 
-write.csv(all_verify, "verification_table2.csv", row.names = F)
+write.csv(all_verify, "verification/verification_table.csv", row.names = F)
 
 
-#------------------------------------------------#
-#-- Create event table
-#------------------------------------------------#
+#-- Create event table ----
 events <- dplyr::filter(actuals, forecast_date == Sys.Date() - 1) %>%
           left_join(select(sites, short_name, site_catid)) %>%
           select(forecast_date, short_name, site_catid, obs_ozone_aqi, obs_pm25_aqi)
 
 
-# Add event flags and comments
-
-# Attach new event days to event archive
-print("Loading previous event flags...")
-
-# Load
-all_events <- read_csv("event_table.csv")
-
-all_events$forecast_date <-  as.Date(all_events$forecast_date, "%m/%d/%Y")
-
-all_events <- dplyr::filter(all_events, !forecast_date %in% events$forecast_date)
-
-# Join
-all_events <- bind_rows(events, all_events)
-
-
-# Drop dates from previous AQI season
-all_events <- all_events %>%
-              dplyr::filter(forecast_date > (today - 365))
-
-# Save event table
-print("Saving event file...")
-
-write.csv(all_events, "event_table.csv", row.names = F)
-
-saveRDS(events, paste0("Archive/", Sys.Date(), "_event_table.Rdata"))
-
 ##
-
