@@ -5,14 +5,12 @@ output:
     html_preview: false
 ---
 
-> *`r paste("For", format(Sys.Date() - 1, "%A %b %d, %Y"))`*
+# *`r paste("For", format(Sys.Date() - 1, "%A %b %d, %Y"))`*
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=T, warning=F, message=F)
 ```
   
-<br>
-
 ```{r prep, echo=FALSE}
 library(formattable) #remotes::install_github("renkun-ken/formattable")
 library(dplyr)
