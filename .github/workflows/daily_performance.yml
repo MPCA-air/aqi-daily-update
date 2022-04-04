@@ -12,9 +12,9 @@ on:
       
   workflow_dispatch:
   
-  # At every 13 minutes past the hour
+  # At 15 minutes past 7AM Central, Noon UTC
   #schedule:
-  #    - cron:  '13 * * * *'  
+  #    - cron:  '15 12 * * *'  
     
 jobs:
   site:
