@@ -33,11 +33,11 @@ site_list <- c(sites$aqsid, gsub("-", "", sites$alt_siteid))
 pollutant_list <- c("OZONE-8HR", "PM2.5-24hr")
 
 # Get dates
-today     <- gsub("-", "", Sys.Date())
+today <- gsub("-", "", format(Sys.Date(), tz = "America/Chicago"))
 
-yesterday <- Sys.Date() - 1
+yesterday <- as.Date(format(Sys.Date(), tz = "America/Chicago")) - 1
 
-year      <- format(Sys.Date() - 1, "%Y")
+year <- format(Sys.Date() - 1, "%Y")
 
 
 # Download results from AirNow
