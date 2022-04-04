@@ -33,8 +33,14 @@ save_stats <- TRUE
 # Set No. of days before yesterday, 0 is default
 days_past <- 0
 
-aircast_path  <- "https://raw.githubusercontent.com/dKvale/aircast/master/"
-aqiwatch_path <- "https://raw.githubusercontent.com/mpca-air/aqi-watch/main"
+aircast_path  <- "https://raw.githubusercontent.com/MPCA-air/aqi-daily-update/main/"
+aqiwatch_path <- "https://raw.githubusercontent.com/MPCA-air/aqi-watch/main/"
+
+
+# Get monitoring sites ----
+sites <- read_csv(paste0(aircast_path, "data/monitors_and_wx_stations.csv"))
+
+names(sites) <- gsub(" ", "_", tolower(names(sites)))
 
 
 # E-mail subscribers
@@ -156,7 +162,7 @@ if (FALSE) {
   
 if (verify$forecast_day[1] != 1 & ozone_season) {
   
-  cmaq   <- tryCatch(read_csv(paste0("X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/Staff Folders/Dorian/AQI/Current forecast/", Sys.Date() - 2, "_CMAQ_forecast.csv")), error = function(e) NA)
+  cmaq   <- tryCatch(read_csv(paste0("Current forecast/", Sys.Date() - 2, "_CMAQ_forecast.csv")), error = function(e) NA)
   
   if (!is.na(cmaq)) {
     
@@ -289,7 +295,7 @@ verify_pm <- verify_pm %>%
                     )
 ```
 
-```{r plots, echo=FALSE}
+```{r tall-tables, echo=FALSE}
 
 # Plot accuracy
 # Flip to tall table
@@ -336,7 +342,7 @@ tall_o3 <- tall_o3 %>%
 ```
   
   
-```{r echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.width=6, fig.height=6, fig.show='hide'}
+```{r plots, echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.width=6, fig.height=6, fig.show='hide'}
   
 # Order sites
 tall_o3$Site <- factor(tall_o3$Site, levels = rev(arrange(filter(tall_o3, model == "Obs AQI"), -conc)$Site))
@@ -471,7 +477,7 @@ verify_pm$background_color <- NULL
 ```
   
   
-```{r echo=FALSE, results='hide'}
+```{r load-leader-board, echo=FALSE, results='hide'}
 # Leader board
 
 # Load past results
@@ -658,7 +664,7 @@ options(digits = 2)
 ```
 
 
-```{r tables, echo=FALSE}
+```{r yest-tables, echo=FALSE}
 # Create web table
 margin_right <- function(i) {
     
@@ -706,7 +712,7 @@ yest_board <- bind_cols(yest_board %>% select(matches("O3 err|M error|Model")) %
 yest_board$`PM yellow accuracy %` <- as.character(yest_board$`PM yellow accuracy %`)
 yest_board$`O3 yellow accuracy %` <- as.character(yest_board$`O3 yellow accuracy %`)
   
-yest_board[is.na(yest_board)] <- ""
+#yest_board[is.na(yest_board)] <- ""
 yest_board[yest_board == "NaN"] <- ""
    
 

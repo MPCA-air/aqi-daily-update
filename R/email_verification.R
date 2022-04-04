@@ -4,7 +4,6 @@
 
 library(lubridate)
 
-
 #-- Create Markdown issue
 md_file <- readLines("R/daily_results.Rmd")
 writeLines(md_file, "issue.Rmd")

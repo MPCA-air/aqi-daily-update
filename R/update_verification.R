@@ -1,7 +1,5 @@
 #! /usr/bin/env Rscript
 
-## "C:\Users\dkvale\Documents\R\R-4.0.2\bin\i386\Rscript.exe" --no-save --no-restore "R\update_verification.R"
-
 days_past <- 1
 
 today <- Sys.Date()
@@ -535,8 +533,9 @@ all_verify <- select(all_verify, -short_name) %>%
               left_join(select(sites, short_name, site_catid)) %>%
               select(forecast_date, forecast_day, site_catid, short_name, group, everything())
 
-all_verify <- subset(all_verify, 
-                     as.numeric(format(forecast_date, "%Y")) > (as.numeric(format(Sys.Date(), "%Y")) - 1))
+# Keep only current year
+all_verify <- all_verify %>%
+              subset(as.numeric(format(forecast_date, "%Y")) > (as.numeric(format(Sys.Date(), "%Y")) - 1))
 
 saveRDS(all_verify, paste0("verification/", Sys.Date(), "_verification_table.Rdata"))
 
