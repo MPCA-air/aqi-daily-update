@@ -71,12 +71,12 @@ jobs:
         with:
           files: issue.md
 
-      - uses: JasonEtco/create-an-issue@v2
-        if: steps.check_files.outputs.files_exists == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          filename: issue.md
+      #- uses: JasonEtco/create-an-issue@v2
+      #  if: steps.check_files.outputs.files_exists == 'true'
+      #  env:
+       #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #with:
+        #  filename: issue.md
 
       # Add new files in data and web folder, commit along with other modified files, push
       - name: Commit website updates
