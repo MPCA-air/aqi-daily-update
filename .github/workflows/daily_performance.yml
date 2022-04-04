@@ -58,7 +58,7 @@ jobs:
         run: |
           source("R/get_aqi_results.R")
           source("R/update_verification.R")
-          source("R/email_background.R")
+          source("R/email_verification.R")
         shell: Rscript {0} 
 
       - name: List files
