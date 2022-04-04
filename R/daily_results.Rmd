@@ -5,7 +5,7 @@ output:
     html_preview: false
 ---
 
-# *`r paste("For", format(Sys.Date() - 1, "%A %b %d, %Y"))`*
+## *`r paste("For", format(Sys.Date() - 1, "%A %b %d, %Y"))`*
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=T, warning=F, message=F)
@@ -912,7 +912,7 @@ if (ozone_season) {
   cat(paste0(' and __', round(o3_performance[2, ]$accuracy), '%__ (', sum(filter(tall_o3, !is.na(aqi), model == 'MPCA forecast')$fcst_correct, na.rm = T), '/', o3_performance[1, ]$n_preds, ' sites) for Ozone'))
 }
 
-cat(".  \n\nView this weeks complete modeling performance at [AQI Watch](https://mpca-air.github.io/aqi-watch/). \n")
+cat(".  \n\nView this weeks complete modeling performance at [AQI Watch](https://mpca-air.github.io/aqi-watch/model_perf.html). \n")
 
 ```
 </p>
