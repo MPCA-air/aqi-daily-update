@@ -38,7 +38,7 @@ names(sites) <- gsub(" ", "_", tolower(names(sites)))
 
 
 # E-mail subscribers
-subscribers <- "dkvale" #read_csv("data/daily_subscribers.csv")$git_name 
+subscribers <- read_csv("data/daily_subscribers.csv")$git_name 
 
 
 # Test for weekend
