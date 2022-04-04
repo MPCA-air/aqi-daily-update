@@ -13,7 +13,7 @@ rmarkdown::render(input = "issue.Rmd")
 # Update Github table
 
 # Filter verification to last 7 days
-verify <- filter(verify, forecast_date > (Sys.Date() - 8), forecast_date < Sys.Date())
+verify <- all_verify %>% filter(forecast_date > (Sys.Date() - 8), forecast_date < Sys.Date())
 
 # Filter to one forecast per day for each site
 verify <- verify %>%
