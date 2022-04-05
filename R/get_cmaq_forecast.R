@@ -20,7 +20,8 @@ get_cmaq_forecast <- function(lat, long, hour_gmt = NULL) {
   
   o3        <- o3[-(1:4), c(1:3)]
   
-  names(o3) <- o3[1, ]
+  unlist(o3[1, ])
+  
   names(o3) <- c("Time", "ozone_1hr", "ozone_8hr")
   
   o3        <- o3[2:(grep("moke", o3[ ,1])[1]-1), ]
