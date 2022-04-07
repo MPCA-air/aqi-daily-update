@@ -14,7 +14,7 @@ on:
   
   # At 15 minutes past 7AM Central, Noon UTC
   schedule:
-      - cron:  '15 13 * * *'  
+      - cron:  '15 12 * * *'  
     
 jobs:
   site:
