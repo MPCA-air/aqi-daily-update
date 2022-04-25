@@ -109,6 +109,10 @@ aqi_forc <- unique(aqi_forc_all)
 aqi_forc <- aqi_forc %>% 
             mutate(Group = gsub("Leech Lake Nation: Cass Lake",  "Leech Lake", Group))
 
+# Drop columns
+aqi_forc <- aqi_forc %>% select(-date_issued, -is_forecast)
+
+
 ##-------------------------------------------------------------#
 ## Load internal forecasts for missing sites ----
 ## Update when forecasts moved to Github
@@ -162,18 +166,19 @@ aqi_forc_updates <- left_join(aqi_forc_updates,
 
 
 aqi_forc <- bind_rows(aqi_forc_original, aqi_forc_updates)
-
+}                   
+#-------------------------------------------------------------#                     
+ 
+                         
 # Use submitted value if available
 aqi_forc  <- aqi_forc %>%
-             rowwise() %>%
-             mutate(AQI_O3       = ifelse(is.na(OZONE), as.character(AQI_O3_Ens), OZONE),
-                    `Max Avg8Hr` = aqi2conc(AQI_O3, "Ozone"),
-                    AQI_PM       = ifelse(is.na(`PM2.5`), as.character(AQI_PM_Ens), `PM2.5`),
-                    Pm25Avg      = aqi2conc(AQI_PM, "PM25")) %>%
-             select(-c(OZONE, `PM2.5`))
-}                    
-#-------------------------------------------------------------#                     
-                         
+  rowwise() %>%
+  mutate(AQI_O3       = OZONE, #ifelse(is.na(OZONE), as.character(AQI_O3_Ens), OZONE),
+         `Max Avg8Hr` = aqi2conc(AQI_O3, "Ozone"),
+         AQI_PM       = `PM2.5`, #ifelse(is.na(`PM2.5`), as.character(AQI_PM_Ens), `PM2.5`),
+         Pm25Avg      = aqi2conc(AQI_PM, "PM25")) %>%
+  select(-c(OZONE, `PM2.5`))
+                        
 
 # Yesterday's model output forecast ----
 verify <- aqi_forc
@@ -346,7 +351,6 @@ all_verify$fcst_pm25_aqi  <- as.character(all_verify$fcst_pm25_aqi)
 # All logical columns to numeric
 all_verify <- try(mutate_if(all_verify, is.logical, as.numeric))
 verify     <- try(mutate_if(verify, is.logical, as.numeric))
-verify$is_forecast <- as.numeric(as.logical(verify$is_forecast))
 
 if (sum(grepl("fcst_", names(verify))) > 0) {
   verify$fcst_ozone_aqi <- as.character(verify$fcst_ozone_aqi)
