@@ -346,9 +346,12 @@ all_verify$fcst_pm25_aqi  <- as.character(all_verify$fcst_pm25_aqi)
 # All logical columns to numeric
 all_verify <- try(mutate_if(all_verify, is.logical, as.numeric))
 verify     <- try(mutate_if(verify, is.logical, as.numeric))
+verify$is_forecast <- as.numeric(as.logical(verify$is_forecast))
 
-verify$fcst_ozone_aqi <- as.character(verify$fcst_ozone_aqi)
-verify$fcst_pm25_aqi  <- as.character(verify$fcst_pm25_aqi)
+if (sum(grepl("fcst_", names(verify))) > 0) {
+  verify$fcst_ozone_aqi <- as.character(verify$fcst_ozone_aqi)
+  verify$fcst_pm25_aqi  <- as.character(verify$fcst_pm25_aqi)
+}
 
 # Join all
 all_verify <- bind_rows(verify, all_verify)
