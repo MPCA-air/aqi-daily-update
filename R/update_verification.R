@@ -9,8 +9,6 @@ source(paste0(aqiwatch_path, "R/aqi_convert.R"))
 
 
 # Sites ----
-print("Loading sites...")
-
 sites <- aqi_sites
 
 # Drop outstate sites
@@ -111,7 +109,8 @@ aqi_forc <- unique(aqi_forc_all)
 aqi_forc <- aqi_forc %>% 
             mutate(Group = gsub("Leech Lake Nation: Cass Lake",  "Leech Lake", Group))
 
-# Load internal forecasts for missing sites
+##-------------------------------------------------------------#
+## Load internal forecasts for missing sites ----
 ## Update when forecasts moved to Github
 if (FALSE) {
 aqi_forc_int <- tryCatch(read_csv("AQI_Solutions/Values/All_Values_gen2.csv"),
@@ -163,7 +162,6 @@ aqi_forc_updates <- left_join(aqi_forc_updates,
 
 
 aqi_forc <- bind_rows(aqi_forc_original, aqi_forc_updates)
-}
 
 # Use submitted value if available
 aqi_forc  <- aqi_forc %>%
@@ -173,7 +171,9 @@ aqi_forc  <- aqi_forc %>%
                     AQI_PM       = ifelse(is.na(`PM2.5`), as.character(AQI_PM_Ens), `PM2.5`),
                     Pm25Avg      = aqi2conc(AQI_PM, "PM25")) %>%
              select(-c(OZONE, `PM2.5`))
-
+}                    
+#-------------------------------------------------------------#                     
+                         
 
 # Yesterday's model output forecast ----
 verify <- aqi_forc
