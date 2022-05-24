@@ -1,28 +1,28 @@
 "forecast_date","forecast_day","site_catid","short_name","group","obs_ozone_ppb","obs_pm25_ugm3","obs_ozone_aqi","obs_pm25_aqi","state","fcst_ozone_aqi","fcst_ozone_ppb","fcst_pm25_aqi","fcst_pm25_ugm3","date_issued","is_forecast"
-2022-05-22,2,"27-003-1001","Cedar_Creek","North Twin Cities Metro",43,NA,40,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-003-1002","Anoka","North Twin Cities Metro",42,4.2,39,18,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-005-2013","Detroit_Lakes","Detroit Lakes",41,3.1,38,13,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-007-2304","Red_Lake","Red Lake",NA,3.2,NA,13,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-017-7417","Fond_Du_Lac","Fond du Lac",38,-0.6,35,-2,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-021-3410","Leech_Lake","Leech Lake",NA,5.7,NA,24,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-035-3204","Brainerd","Brainerd",41,3.4,38,14,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-037-0470","Apple_Valley","South Twin Cities Metro",NA,2.8,NA,12,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-037-0480","Lakeville","South Twin Cities Metro",NA,2.7,NA,11,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-049-5302","Stanton","South Twin Cities Metro",45,NA,42,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-053-0962","MSP","Minneapolis-St. Paul",35,3.4,32,14,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-075-0005","Ely","Ely",39,2.7,36,11,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-083-4210","Marshall","Marshall",43,2.4,40,10,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-095-3051","Mille_Lacs","Mille Lacs",40,NA,37,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-109-5008","Rochester","Rochester",46,3.2,43,13,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-123-0871","Harding","Minneapolis-St. Paul",NA,5.4,NA,22,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-137-7001","Virginia","Virginia",NA,2,NA,8,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-137-7550","Duluth_WDSE","Duluth",39,1.6,36,7,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-139-0505","Shakopee","South Twin Cities Metro",43,4,40,17,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-145-3052","St_Cloud","St. Cloud",42,3.4,39,14,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-163-6016","Marine_St_Croix","North Twin Cities Metro",42,NA,39,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"27-171-3201","St_Michael","North Twin Cities Metro",44,2.3,41,10,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"38-017-1004","Fargo","Moorhead",42,4.2,39,18,"MN","green",NA,"green",NA,NA,NA
-2022-05-22,2,"55-063-0012","Winona","Winona",40,3.1,37,13,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-003-1001","Cedar_Creek","North Twin Cities Metro",53,NA,49,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-003-1002","Anoka","North Twin Cities Metro",50,4.3,46,18,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-005-2013","Detroit_Lakes","Detroit Lakes",48,4.7,44,20,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-007-2304","Red_Lake","Red Lake",NA,4.1,NA,17,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-017-7417","Fond_Du_Lac","Fond du Lac",45,1.2,42,5,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-021-3410","Leech_Lake","Leech Lake",NA,6.2,NA,26,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-035-3204","Brainerd","Brainerd",47,4.2,44,18,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-037-0470","Apple_Valley","South Twin Cities Metro",NA,2.3,NA,10,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-037-0480","Lakeville","South Twin Cities Metro",NA,2.5,NA,10,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-049-5302","Stanton","South Twin Cities Metro",50,NA,46,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-053-0962","MSP","Minneapolis-St. Paul",47,4.7,44,20,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-075-0005","Ely","Ely",47,4.1,44,17,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-083-4210","Marshall","Marshall",47,5.1,44,21,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-095-3051","Mille_Lacs","Mille Lacs",47,NA,44,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-109-5008","Rochester","Rochester",48,2.1,44,9,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-123-0871","Harding","Minneapolis-St. Paul",NA,4.2,NA,18,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-137-7001","Virginia","Virginia",NA,4.4,NA,18,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-137-7550","Duluth_WDSE","Duluth",44,1.5,41,6,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-139-0505","Shakopee","South Twin Cities Metro",50,5.5,46,23,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-145-3052","St_Cloud","St. Cloud",49,3.7,45,15,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-163-6016","Marine_St_Croix","North Twin Cities Metro",49,NA,45,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"27-171-3201","St_Michael","North Twin Cities Metro",51,1.8,47,8,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"38-017-1004","Fargo","Moorhead",46,5.3,43,22,"MN","green",NA,"green",NA,NA,NA
+2022-05-23,3,"55-063-0012","Winona","Winona",45,3.8,42,16,"MN","green",NA,"green",NA,NA,NA
 2022-03-31,1,"27-003-1001","Cedar_Creek","North Twin Cities Metro",43,NA,40,NA,"MN","34",36.7,"18",4.3,"03/30/22",0
 2022-03-31,1,"27-003-1002","Anoka","North Twin Cities Metro",41,3.3,38,14,"MN","34",36.7,"18",4.3,"03/30/22",0
 2022-03-31,1,"27-005-2013","Detroit_Lakes","Detroit Lakes",42,2.3,39,10,"MN","30",32.4,"23",5.5,"03/30/22",0
@@ -1267,24 +1267,48 @@
 2022-05-21,1,"27-171-3201","St_Michael","North Twin Cities Metro",38,1,35,4,"MN","38",41,"20",4.8,NA,NA
 2022-05-21,1,"38-017-1004","Fargo","Moorhead",34,1.3,31,5,"MN","36",38.9,"22",5.3,NA,NA
 2022-05-21,1,"55-063-0012","Winona","Winona",37,2.2,34,9,"MN","38",41,"25",6,NA,NA
-2022-05-23,3,NA,NA,"Brainerd",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Detroit Lakes",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Duluth",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Ely",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Fond du Lac",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Grand Portage",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Leech Lake",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Marshall",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Mille Lacs",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Minneapolis-St. Paul",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Moorhead",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"North Twin Cities Metro",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Red Lake",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Rochester",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"South Twin Cities Metro",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"St. Cloud",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Virginia",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
-2022-05-23,3,NA,NA,"Winona",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-003-1001","Cedar_Creek","North Twin Cities Metro",43,NA,40,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-003-1002","Anoka","North Twin Cities Metro",42,4.2,39,18,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-005-2013","Detroit_Lakes","Detroit Lakes",41,3.1,38,13,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-007-2304","Red_Lake","Red Lake",NA,3.2,NA,13,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-017-7417","Fond_Du_Lac","Fond du Lac",38,-0.6,35,-2,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-021-3410","Leech_Lake","Leech Lake",NA,5.7,NA,24,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-035-3204","Brainerd","Brainerd",41,3.4,38,14,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-037-0470","Apple_Valley","South Twin Cities Metro",NA,2.8,NA,12,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-037-0480","Lakeville","South Twin Cities Metro",NA,2.7,NA,11,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-049-5302","Stanton","South Twin Cities Metro",45,NA,42,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-053-0962","MSP","Minneapolis-St. Paul",35,3.4,32,14,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-075-0005","Ely","Ely",39,2.7,36,11,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-083-4210","Marshall","Marshall",43,2.4,40,10,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-095-3051","Mille_Lacs","Mille Lacs",40,NA,37,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-109-5008","Rochester","Rochester",46,3.2,43,13,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-123-0871","Harding","Minneapolis-St. Paul",NA,5.4,NA,22,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-137-7001","Virginia","Virginia",NA,2,NA,8,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-137-7550","Duluth_WDSE","Duluth",39,1.6,36,7,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-139-0505","Shakopee","South Twin Cities Metro",43,4,40,17,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-145-3052","St_Cloud","St. Cloud",42,3.4,39,14,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-163-6016","Marine_St_Croix","North Twin Cities Metro",42,NA,39,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"27-171-3201","St_Michael","North Twin Cities Metro",44,2.3,41,10,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"38-017-1004","Fargo","Moorhead",42,4.2,39,18,"MN","green",NA,"green",NA,NA,NA
+2022-05-22,2,"55-063-0012","Winona","Winona",40,3.1,37,13,"MN","green",NA,"green",NA,NA,NA
+2022-05-24,1,NA,NA,"Brainerd",NA,NA,NA,NA,"MN","28",30.2,"46",11,NA,NA
+2022-05-24,1,NA,NA,"Detroit Lakes",NA,NA,NA,NA,"MN","44",47.5,"24",5.8,NA,NA
+2022-05-24,1,NA,NA,"Duluth",NA,NA,NA,NA,"MN","43",46.4,"22",5.3,NA,NA
+2022-05-24,1,NA,NA,"Ely",NA,NA,NA,NA,"MN","44",47.5,"17",4.1,NA,NA
+2022-05-24,1,NA,NA,"Fond du Lac",NA,NA,NA,NA,"MN","46",49.7,"22",5.3,NA,NA
+2022-05-24,1,NA,NA,"Grand Portage",NA,NA,NA,NA,"MN","42",45.4,"21",5,NA,NA
+2022-05-24,1,NA,NA,"Leech Lake",NA,NA,NA,NA,"MN","44",47.5,"25",6,NA,NA
+2022-05-24,1,NA,NA,"Marshall",NA,NA,NA,NA,"MN","46",49.7,"33",7.9,NA,NA
+2022-05-24,1,NA,NA,"Mille Lacs",NA,NA,NA,NA,"MN","28",30.2,"46",11,NA,NA
+2022-05-24,1,NA,NA,"Minneapolis-St. Paul",NA,NA,NA,NA,"MN","40",43.2,"36",8.6,NA,NA
+2022-05-24,1,NA,NA,"Moorhead",NA,NA,NA,NA,"MN","49",52.9,"33",7.9,NA,NA
+2022-05-24,1,NA,NA,"North Twin Cities Metro",NA,NA,NA,NA,"MN","44",47.5,"25",6,NA,NA
+2022-05-24,1,NA,NA,"Red Lake",NA,NA,NA,NA,"MN","45",48.6,"19",4.6,NA,NA
+2022-05-24,1,NA,NA,"Rochester",NA,NA,NA,NA,"MN","47",50.8,"20",4.8,NA,NA
+2022-05-24,1,NA,NA,"South Twin Cities Metro",NA,NA,NA,NA,"MN","45",48.6,"28",6.7,NA,NA
+2022-05-24,1,NA,NA,"St. Cloud",NA,NA,NA,NA,"MN","46",49.7,"26",6.2,NA,NA
+2022-05-24,1,NA,NA,"Virginia",NA,NA,NA,NA,"MN","48",51.8,"25",6,NA,NA
+2022-05-24,1,NA,NA,"Winona",NA,NA,NA,NA,"MN","42",45.4,"24",5.8,NA,NA
 2022-05-24,4,NA,NA,"Brainerd",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
 2022-05-24,4,NA,NA,"Detroit Lakes",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
 2022-05-24,4,NA,NA,"Duluth",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
@@ -1303,6 +1327,24 @@
 2022-05-24,4,NA,NA,"St. Cloud",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
 2022-05-24,4,NA,NA,"Virginia",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
 2022-05-24,4,NA,NA,"Winona",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Brainerd",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Detroit Lakes",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Duluth",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Ely",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Fond du Lac",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Grand Portage",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Leech Lake",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Marshall",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Mille Lacs",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Minneapolis-St. Paul",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Moorhead",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"North Twin Cities Metro",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Red Lake",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Rochester",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"South Twin Cities Metro",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"St. Cloud",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Virginia",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-25,2,NA,NA,"Winona",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
 2022-05-25,5,NA,NA,"Brainerd",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
 2022-05-25,5,NA,NA,"Detroit Lakes",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
 2022-05-25,5,NA,NA,"Duluth",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
@@ -1321,3 +1363,21 @@
 2022-05-25,5,NA,NA,"St. Cloud",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
 2022-05-25,5,NA,NA,"Virginia",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
 2022-05-25,5,NA,NA,"Winona",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Brainerd",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Detroit Lakes",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Duluth",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Ely",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Fond du Lac",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Grand Portage",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Leech Lake",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Marshall",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Mille Lacs",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Minneapolis-St. Paul",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Moorhead",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"North Twin Cities Metro",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Red Lake",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Rochester",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"South Twin Cities Metro",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"St. Cloud",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Virginia",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA
+2022-05-26,3,NA,NA,"Winona",NA,NA,NA,NA,"MN","green",NA,"green",NA,NA,NA

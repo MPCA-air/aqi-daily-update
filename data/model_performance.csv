@@ -1,27 +1,4 @@
 forecast_date,forecast_day,site_catid,short_name,group,obs_ozone_ppb,obs_pm25_ugm3,obs_ozone_aqi,obs_pm25_aqi,state,fcst_ozone_aqi,fcst_ozone_ppb,fcst_pm25_aqi,fcst_pm25_ugm3,date_issued,is_forecast
-2022-05-16,3,27-003-1001,Cedar_Creek,North Twin Cities Metro,41,NA,38,NA,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-003-1002,Anoka,North Twin Cities Metro,43,NA,40,NA,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-005-2013,Detroit_Lakes,Detroit Lakes,36,9.5,33,40,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-007-2304,Red_Lake,Red Lake,NA,1.7,NA,7,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-017-7417,Fond_Du_Lac,Fond du Lac,34,-0.3,31,-1,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-021-3410,Leech_Lake,Leech Lake,NA,3.5,NA,15,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-035-3204,Brainerd,Brainerd,34,2.5,31,10,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-037-0470,Apple_Valley,South Twin Cities Metro,NA,1.5,NA,6,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-037-0480,Lakeville,South Twin Cities Metro,NA,1.8,NA,8,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-049-5302,Stanton,South Twin Cities Metro,48,NA,44,NA,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-053-0962,MSP,Minneapolis-St. Paul,29,2.5,27,10,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-075-0005,Ely,Ely,28,1.9,26,8,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-083-4210,Marshall,Marshall,48,3.7,44,15,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-095-3051,Mille_Lacs,Mille Lacs,33,NA,31,NA,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-109-5008,Rochester,Rochester,50,4.2,46,18,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-123-0871,Harding,Minneapolis-St. Paul,NA,3.1,NA,13,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-137-7001,Virginia,Virginia,NA,0.5,NA,2,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-137-7550,Duluth_WDSE,Duluth,34,0,31,0,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-139-0505,Shakopee,South Twin Cities Metro,46,NA,43,NA,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-145-3052,St_Cloud,St. Cloud,42,2.3,39,10,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,27-171-3201,St_Michael,North Twin Cities Metro,44,0.7,41,3,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,38-017-1004,Fargo,Moorhead,35,3.4,32,14,MN,green,NA,green,NA,NA,NA
-2022-05-16,3,55-063-0012,Winona,Winona,51,5.1,47,21,MN,green,NA,green,NA,NA,NA
 2022-05-17,1,27-003-1001,Cedar_Creek,North Twin Cities Metro,42,NA,39,NA,MN,40,43.2,21,5,NA,NA
 2022-05-17,1,27-003-1002,Anoka,North Twin Cities Metro,42,4.5,39,19,MN,40,43.2,21,5,NA,NA
 2022-05-17,1,27-005-2013,Detroit_Lakes,Detroit Lakes,39,4.3,36,18,MN,42,45.4,15,3.6,NA,NA
@@ -162,3 +139,27 @@ forecast_date,forecast_day,site_catid,short_name,group,obs_ozone_ppb,obs_pm25_ug
 2022-05-22,2,27-171-3201,St_Michael,North Twin Cities Metro,44,2.3,41,10,MN,green,NA,green,NA,NA,NA
 2022-05-22,2,38-017-1004,Fargo,Moorhead,42,4.2,39,18,MN,green,NA,green,NA,NA,NA
 2022-05-22,2,55-063-0012,Winona,Winona,40,3.1,37,13,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-003-1001,Cedar_Creek,North Twin Cities Metro,53,NA,49,NA,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-003-1002,Anoka,North Twin Cities Metro,50,4.3,46,18,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-005-2013,Detroit_Lakes,Detroit Lakes,48,4.7,44,20,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-007-2304,Red_Lake,Red Lake,NA,4.1,NA,17,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-017-7417,Fond_Du_Lac,Fond du Lac,45,1.2,42,5,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-021-3410,Leech_Lake,Leech Lake,NA,6.2,NA,26,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-035-3204,Brainerd,Brainerd,47,4.2,44,18,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-037-0470,Apple_Valley,South Twin Cities Metro,NA,2.3,NA,10,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-037-0480,Lakeville,South Twin Cities Metro,NA,2.5,NA,10,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-049-5302,Stanton,South Twin Cities Metro,50,NA,46,NA,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-053-0962,MSP,Minneapolis-St. Paul,47,4.7,44,20,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-075-0005,Ely,Ely,47,4.1,44,17,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-083-4210,Marshall,Marshall,47,5.1,44,21,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-095-3051,Mille_Lacs,Mille Lacs,47,NA,44,NA,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-109-5008,Rochester,Rochester,48,2.1,44,9,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-123-0871,Harding,Minneapolis-St. Paul,NA,4.2,NA,18,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-137-7001,Virginia,Virginia,NA,4.4,NA,18,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-137-7550,Duluth_WDSE,Duluth,44,1.5,41,6,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-139-0505,Shakopee,South Twin Cities Metro,50,5.5,46,23,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-145-3052,St_Cloud,St. Cloud,49,3.7,45,15,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-163-6016,Marine_St_Croix,North Twin Cities Metro,49,NA,45,NA,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,27-171-3201,St_Michael,North Twin Cities Metro,51,1.8,47,8,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,38-017-1004,Fargo,Moorhead,46,5.3,43,22,MN,green,NA,green,NA,NA,NA
+2022-05-23,3,55-063-0012,Winona,Winona,45,3.8,42,16,MN,green,NA,green,NA,NA,NA
