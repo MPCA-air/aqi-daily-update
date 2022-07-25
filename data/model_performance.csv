@@ -1,23 +1,4 @@
 forecast_date,forecast_day,site_catid,short_name,group,obs_ozone_ppb,obs_pm25_ugm3,obs_ozone_aqi,obs_pm25_aqi,state,fcst_ozone_aqi,fcst_ozone_ppb,fcst_pm25_aqi,fcst_pm25_ugm3,date_issued,is_forecast
-2022-07-17,2,27-003-1001,Cedar_Creek,North Twin Cities Metro,46,NA,43,NA,MN,yellow,NA,green,NA,NA,NA
-2022-07-17,2,27-003-1002,Anoka,North Twin Cities Metro,49,6.4,45,27,MN,yellow,NA,green,NA,NA,NA
-2022-07-17,2,27-005-2013,Detroit_Lakes,Detroit Lakes,44,4.5,41,19,MN,yellow,NA,green,NA,NA,NA
-2022-07-17,2,27-007-2304,Red_Lake,Red Lake,NA,3.4,NA,14,MN,green,NA,green,NA,NA,NA
-2022-07-17,2,27-017-7417,Fond_Du_Lac,Fond du Lac,45,3.6,42,15,MN,green,NA,green,NA,NA,NA
-2022-07-17,2,27-021-3410,Leech_Lake,Leech Lake,NA,5.7,NA,24,MN,green,NA,green,NA,NA,NA
-2022-07-17,2,27-035-3204,Brainerd,Brainerd,43,5.3,40,22,MN,green,NA,green,NA,NA,NA
-2022-07-17,2,27-053-0962,MSP,Minneapolis-St. Paul,43,NA,40,NA,MN,green,NA,green,NA,NA,NA
-2022-07-17,2,27-075-0005,Ely,Ely,39,NA,36,NA,MN,green,NA,green,NA,NA,NA
-2022-07-17,2,27-083-4210,Marshall,Marshall,46,4,43,17,MN,yellow,NA,green,NA,NA,NA
-2022-07-17,2,27-095-3051,Mille_Lacs,Mille Lacs,41,NA,38,NA,MN,green,NA,green,NA,NA,NA
-2022-07-17,2,27-109-5008,Rochester,Rochester,44,3,41,12,MN,green,NA,green,NA,NA,NA
-2022-07-17,2,27-137-7001,Virginia,Virginia,NA,5.5,NA,23,MN,green,NA,green,NA,NA,NA
-2022-07-17,2,27-137-7550,Duluth_WDSE,Duluth,34,2.6,31,11,MN,green,NA,green,NA,NA,NA
-2022-07-17,2,27-139-0505,Shakopee,South Twin Cities Metro,49,NA,45,NA,MN,yellow,NA,green,NA,NA,NA
-2022-07-17,2,27-163-6016,Marine_St_Croix,North Twin Cities Metro,48,NA,44,NA,MN,yellow,NA,green,NA,NA,NA
-2022-07-17,2,27-171-3201,St_Michael,North Twin Cities Metro,48,2.6,44,11,MN,yellow,NA,green,NA,NA,NA
-2022-07-17,2,38-017-1004,Fargo,Moorhead,44,6.2,41,26,MN,yellow,NA,green,NA,NA,NA
-2022-07-17,2,55-063-0012,Winona,Winona,42,8.3,39,35,MN,green,NA,green,NA,NA,NA
 2022-07-18,3,27-003-1001,Cedar_Creek,North Twin Cities Metro,52,NA,48,NA,MN,yellow,NA,green,NA,NA,NA
 2022-07-18,3,27-005-2013,Detroit_Lakes,Detroit Lakes,48,6.4,44,27,MN,yellow,NA,green,NA,NA,NA
 2022-07-18,3,27-007-2304,Red_Lake,Red Lake,NA,4.6,NA,19,MN,green,NA,green,NA,NA,NA
@@ -149,3 +130,23 @@ forecast_date,forecast_day,site_catid,short_name,group,obs_ozone_ppb,obs_pm25_ug
 2022-07-23,1,27-171-3201,St_Michael,North Twin Cities Metro,40,7.5,37,31,MN,42,45.4,22,5.3,NA,NA
 2022-07-23,1,38-017-1004,Fargo,Moorhead,40,5,37,21,MN,35,37.8,20,4.8,NA,NA
 2022-07-23,1,55-063-0012,Winona,Winona,40,7.1,37,30,MN,43,46.4,25,6,NA,NA
+2022-07-24,2,27-003-1001,Cedar_Creek,North Twin Cities Metro,26,NA,24,NA,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-003-1002,Anoka,North Twin Cities Metro,27,2.8,25,12,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-005-2013,Detroit_Lakes,Detroit Lakes,26,3.2,24,13,MN,green,NA,yellow,NA,NA,NA
+2022-07-24,2,27-007-2304,Red_Lake,Red Lake,NA,1,NA,4,MN,green,NA,yellow,NA,NA,NA
+2022-07-24,2,27-017-7417,Fond_Du_Lac,Fond du Lac,28,1,26,4,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-021-3410,Leech_Lake,Leech Lake,NA,3.7,NA,15,MN,green,NA,yellow,NA,NA,NA
+2022-07-24,2,27-031-7810,Grand_Portage,Grand Portage,NA,-0.5,NA,-2,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-035-3204,Brainerd,Brainerd,24,2.5,22,10,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-049-5302,Stanton,South Twin Cities Metro,31,NA,29,NA,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-053-0962,MSP,Minneapolis-St. Paul,23,NA,21,NA,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-075-0005,Ely,Ely,30,NA,28,NA,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-083-4210,Marshall,Marshall,30,3.4,28,14,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-095-3051,Mille_Lacs,Mille Lacs,24,NA,22,NA,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-123-0871,Harding,Minneapolis-St. Paul,NA,3.4,NA,14,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-137-7550,Duluth_WDSE,Duluth,29,-1.2,27,-5,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-139-0505,Shakopee,South Twin Cities Metro,30,NA,28,NA,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-163-6016,Marine_St_Croix,North Twin Cities Metro,26,NA,24,NA,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,27-171-3201,St_Michael,North Twin Cities Metro,27,NA,25,NA,MN,green,NA,green,NA,NA,NA
+2022-07-24,2,38-017-1004,Fargo,Moorhead,23,4.2,21,18,MN,green,NA,yellow,NA,NA,NA
+2022-07-24,2,55-063-0012,Winona,Winona,34,5.7,31,24,MN,green,NA,green,NA,NA,NA
