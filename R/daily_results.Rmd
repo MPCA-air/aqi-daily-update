@@ -876,12 +876,12 @@ verify_all <- verify_all %>%
 # Add color icons ----
 verify_o3 <- verify_all %>%
              mutate(across(c(Monitored, MPCA), ~ 
-                    paste0("<img src='https://via.placeholder.com/15/", gsub("#", "", conc2color(.x, pollutant)), "/000000?text=+' /> ", round(.x))))
+                    paste0("<img src='https://via.placeholder.com/15/", gsub("#", "", conc2color(as.numeric(.x), pollutant)), "/000000?text=+' /> ", .x)))
 
 
 verify_pm <- verify_all %>%
              mutate(across(c(Monitored, MPCA), ~ 
-                    paste0("<img src='https://via.placeholder.com/15/", gsub("#", "", conc2color(.x, pollutant)), "/000000?text=+' /> ", round(.x, 1))))
+                    paste0("<img src='https://via.placeholder.com/15/", gsub("#", "", conc2color(as.numeric(.x), pollutant)), "/000000?text=+' /> ", .x))))
 
 ```
   
