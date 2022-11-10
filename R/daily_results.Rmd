@@ -359,9 +359,7 @@ verify_pm <-  verify_pm %>%
                      
 if(nrow(verify_o3) < 1) {
   
-  verify_o3[1, ] <- NA
- 
-  verify_o3$background_color <- NA
+  verify_o3 <- verify_pm[1, ] 
   
   verify_all <- bind_rows(verify_o3[0, ], verify_pm)
   
