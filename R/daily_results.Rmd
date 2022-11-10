@@ -396,7 +396,7 @@ if (!weekend) {
                     geom_point(color = "grey50", size = 1.75) +
                     geom_point(aes(color = background_color), size = 1.6) + 
                     geom_text_repel(aes(label = Site), size = 1.75) + 
-                     scale_color_manual(values = aqi_colors, guide = F) +
+                     scale_color_manual(values = aqi_colors, guide = "none") +
                     ylim(ozone_range) +
                     xlim(ozone_range) +
                     theme_bw() + 
@@ -429,7 +429,7 @@ pm_line_plot <- filter(verify_all, !is.na(`Obs conc`), pollutant == "PM2.5") %>%
                   geom_point(color = "grey50", size = 1.75) +
                   geom_point(aes(color = background_color), size = 1.6) + 
                   geom_text_repel(aes(label = Site), size = 1.75) + 
-                  scale_color_manual(values = aqi_colors, guide = F) +
+                  scale_color_manual(values = aqi_colors, guide = "none") +
                   ylim(pm_range) +
                   xlim(pm_range) +
                   theme_bw() + 
@@ -696,17 +696,19 @@ yest_board <- yest_board %>%
 
 
 yest_board <- bind_cols(yest_board %>% select(matches("O3 err|M error|Model")) %>%
-                           mutate_if(is.numeric, round, digits = 1),
+                           mutate_if(is.numeric, round, digits = 1)%>%
+                           mutate_if(is.numeric, as.character),
                         yest_board %>% select(-matches("o3 err|M error|Model")) %>%
-                           mutate_if(is.numeric, round))
+                           mutate_if(is.numeric, round) %>%
+                           mutate_if(is.numeric, as.character))
 
-# Replace NA's with spaces
-yest_board$`PM yellow accuracy %` <- as.character(yest_board$`PM yellow accuracy %`)
-yest_board$`O3 yellow accuracy %` <- as.character(yest_board$`O3 yellow accuracy %`)
+# Replace NA's with blanks
+yest_board <- yest_board %>% 
+              mutate(across(everything(), ~replace_na(.x, "")))
   
 #yest_board[is.na(yest_board)] <- ""
 yest_board[yest_board == "NaN"] <- ""
-   
+  
 
 if (ozone_season) {
   
