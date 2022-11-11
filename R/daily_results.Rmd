@@ -584,7 +584,7 @@ if (!weekend) {
                           
                           `PM cat accuracy %`  = sum(`PM cat accuracy %` * (`PM Forecasts` - new_obs), `new PM accuracy` * new_obs, na.rm = T) / max(1, `PM Forecasts`, na.rm = T),
                           
-                       `PM yellow accuracy %` = ifelse(is.na(`new PM yellow accuracy`), `PM yellow accuracy %`, sum( `PM yellow accuracy %` * (`PM Forecasts` - new_obs), `new PM yellow accuracy` * new_obs, na.rm = T) / max(1, `PM Forecasts`, na.rm = T)),
+                          `PM yellow accuracy %` = ifelse(is.na(`new PM yellow accuracy`), `PM yellow accuracy %`, sum( `PM yellow accuracy %` * (`PM Forecasts` - new_obs), `new PM yellow accuracy` * new_obs, na.rm = T) / max(1, `PM Forecasts`, na.rm = T)),
                           
                           `PM bullseyes %` = sum(`PM bullseyes %` * (`PM Forecasts` - new_obs), `new PM bullseyes` * new_obs, na.rm = T) / max(1, `PM Forecasts`, na.rm = T),
                           
@@ -881,7 +881,7 @@ verify_o3 <- verify_all %>%
 
 verify_pm <- verify_all %>%
              mutate(across(c(Monitored, MPCA), ~ 
-                    paste0("<img src='https://via.placeholder.com/15/", gsub("#", "", conc2color(as.numeric(.x), pollutant)), "/000000?text=+' /> ", .x))))
+                    paste0("<img src='https://via.placeholder.com/15/", gsub("#", "", conc2color(as.numeric(.x), pollutant)), "/000000?text=+' /> ", .x)))
 
 ```
   
