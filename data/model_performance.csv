@@ -37,3 +37,23 @@ forecast_date,forecast_day,site_catid,short_name,group,obs_ozone_ppb,obs_pm25_ug
 2023-01-02,3,27-145-3052,St_Cloud,St. Cloud,NA,12.3,NA,51,MN,NA,NA,yellow,NA,NA,NA
 2023-01-02,3,38-017-1004,Fargo,Moorhead,27,27.7,25,84,MN,NA,NA,yellow,NA,NA,NA
 2023-01-02,3,55-063-0012,Winona,Winona,NA,21.8,NA,71,MN,NA,NA,yellow,NA,NA,NA
+2023-01-03,1,27-003-1002,Anoka,North Twin Cities Metro,33,NA,31,NA,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-005-2013,Detroit_Lakes,Detroit Lakes,NA,11.6,NA,48,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-007-2304,Red_Lake,Red Lake,NA,10.4,NA,43,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-017-7417,Fond_Du_Lac,Fond du Lac,NA,4.6,NA,19,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-021-3410,Leech_Lake,Leech Lake,NA,5,NA,21,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-035-3204,Brainerd,Brainerd,NA,8.5,NA,35,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-037-0470,Apple_Valley,South Twin Cities Metro,NA,12.5,NA,52,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-037-0480,Lakeville,South Twin Cities Metro,NA,14.1,NA,55,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-053-0962,MSP,Minneapolis-St. Paul,NA,12.8,NA,52,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-053-0963,HC_Anderson,Minneapolis-St. Paul,NA,12.4,NA,52,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-075-0005,Ely,Ely,NA,7.3,NA,30,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-083-4210,Marshall,Marshall,NA,13.1,NA,53,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-109-5008,Rochester,Rochester,NA,8.8,NA,37,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-123-0871,Harding,Minneapolis-St. Paul,NA,12.1,NA,51,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-137-7001,Virginia,Virginia,NA,9,NA,38,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-137-7550,Duluth_WDSE,Duluth,31,8.2,29,34,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-139-0505,Shakopee,South Twin Cities Metro,25,13.3,23,54,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,27-145-3052,St_Cloud,St. Cloud,NA,9.5,NA,40,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,38-017-1004,Fargo,Moorhead,25,34.7,23,99,MN,NA,NA,green,NA,NA,NA
+2023-01-03,1,55-063-0012,Winona,Winona,NA,9.2,NA,38,MN,NA,NA,green,NA,NA,NA
