@@ -169,8 +169,6 @@
         "digest",
         "glue",
         "gtable",
-        "isoband",
-        "mgcv",
         "rlang",
         "scales",
         "tibble",
