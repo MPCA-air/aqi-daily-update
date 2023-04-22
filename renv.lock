@@ -166,7 +166,6 @@
       "Repository": "CRAN",
       "Hash": "d7566c471c7b17e095dd023b9ef155ad",
       "Requirements": [
-        "MASS",
         "digest",
         "glue",
         "gtable",
@@ -192,7 +191,6 @@
         "jsonlite",
         "knitr",
         "stringr",
-        "tinytex",
         "xfun",
         "yaml"
       ]
