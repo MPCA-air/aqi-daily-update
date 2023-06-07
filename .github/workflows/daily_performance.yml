@@ -10,11 +10,11 @@ on:
   #  branches:
   #    - main
       
-  workflow_dispatch:
+  #workflow_dispatch:
   
   # At 15 minutes past 7AM Central, Noon UTC
-  schedule:
-      - cron:  '15 12 * * *'  
+  #schedule:
+  #    - cron:  '15 12 * * *'  
     
 jobs:
   site:
