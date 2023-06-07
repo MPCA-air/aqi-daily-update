@@ -70,7 +70,7 @@ for (i in 0:4) {
 
   aqi_forc <- dplyr::filter(aqi_forc,
                      state %in% c("MN"),
-                     Group %in% c(sites$fcst_region, "Leech Lake Nation: Cass Lake"),
+                     Group %in% c(sites$fcst_region, "Leech Lake Nation: C", "Leech Lake Nation: Cass Lake"),
                      !grepl("Voyage", Group))
 
   # Date format
@@ -107,7 +107,8 @@ aqi_forc <- unique(aqi_forc_all)
 
 # Update Leech Lake name
 aqi_forc <- aqi_forc %>% 
-            mutate(Group = gsub("Leech Lake Nation: Cass Lake",  "Leech Lake", Group))
+            mutate(Group = gsub("Leech Lake Nation: C",  "Leech Lake", Group))
+            #mutate(Group = gsub("Leech Lake Nation: Cass Lake",  "Leech Lake", Group)
 
 # Drop columns
 aqi_forc <- aqi_forc %>% select(-date_issued, -is_forecast)
@@ -127,7 +128,7 @@ if (is.na(aqi_forc_int)) {
 
 
 aqi_forc_int <- aqi_forc_int %>% 
-                mutate(Group = gsub("Leech Lake Nation: Cass Lake",  "Leech Lake", Group))
+                mutate(Group = gsub("Leech Lake Nation: C",  "Leech Lake", Group))
 
 
 # Date format
